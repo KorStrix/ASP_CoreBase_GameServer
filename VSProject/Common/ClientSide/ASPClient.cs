@@ -46,13 +46,15 @@ namespace Common
         {
             T tRecvPacket = default(T);
 
-            RestCombinePacket2S pPacket2S = new RestCombinePacket2S(typeof(T).Name, PacketExtractor.DoConvert_ObjectToJson(pSendPacket));
-            string strSendJson = PacketExtractor.DoConvert_ObjectToJson(pPacket2S);
+            string strSendJson = PacketExtractor.DoConvert_ObjectToJson(pSendPacket);
             byte[] arrByte = System.Text.Encoding.UTF8.GetBytes(strSendJson);
+
+            // Packet을 어떤 URI로 보낼지에 대한 건 고민을 좀더 해봐야 할듯
+            string strSendWhere = strIP_IncludePort + "/" + pSendPacket.strURI;
 
             foreach (IRestServerSender pSendHow in _listServerSender)
             {
-                yield return pSendHow.OnSendRestServer(strIP_IncludePort, pSendPacket.strURI, arrByte,
+                yield return pSendHow.OnSendRestServer(strSendWhere, arrByte,
                     OnRecvJson: (pReturnCode, strRecvJson) =>
                     {
                         if (pReturnCode != ReturnCodeEnum.None)

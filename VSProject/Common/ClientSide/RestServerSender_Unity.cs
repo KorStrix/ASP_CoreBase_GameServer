@@ -28,9 +28,9 @@ public class RestServerSender_Unity : IRestServerSender
         }
     }
 
-    public IEnumerator OnSendRestServer(string strIP_IncludePort, string strURI, byte[] arrSendByte, System.Action<ReturnCodeEnum, string> OnRecvJson)
+    public IEnumerator OnSendRestServer(string strURI, byte[] arrSendByte, System.Action<ReturnCodeEnum, string> OnRecvJson)
     {
-        UnityWebRequest pRequest = Create_WebRequest(strIP_IncludePort, strURI);
+        UnityWebRequest pRequest = Create_WebRequest(strURI);
         pRequest.uploadHandler = new UploadHandlerRaw(arrSendByte);
 
         yield return pRequest.SendWebRequest();
@@ -42,14 +42,14 @@ public class RestServerSender_Unity : IRestServerSender
         OnRecvJson?.Invoke(pReturnCode, pRequest.downloadHandler.text);
     }
 
-    private UnityWebRequest Create_WebRequest(string strIP_IncludePort, string strURI)
+    private UnityWebRequest Create_WebRequest(string strURI)
     {
         UnityWebRequest request = new UnityWebRequest();
 
-        if (strIP_IncludePort.Contains("https"))
+        if (strURI.Contains("https"))
             request.certificateHandler = new DummyCertificateHandler();
 
-        request.url = strIP_IncludePort + "/" + strURI;
+        request.url = strURI + "/" + strURI;
         request.method = "POST";
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");

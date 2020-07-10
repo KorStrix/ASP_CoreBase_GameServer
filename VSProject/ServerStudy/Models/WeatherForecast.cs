@@ -1,7 +1,10 @@
 using System;
 
-namespace WebServerStudy
+namespace ServerStudy
 {
+    /// <summary>
+    /// ASP.net Core 솔루션 생성하면 나오는 예제 Model
+    /// </summary>
     public class WeatherForecast
     {
         public DateTime Date { get; set; }

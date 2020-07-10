@@ -10,8 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
+using ServerStudy.Controllers;
 
-namespace WebServerStudy
+namespace ServerStudy
 {
     public class Startup
     {
@@ -25,7 +27,13 @@ namespace WebServerStudy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                // Use the default property (Pascal) casing
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
+
+            services.AddSingleton<EchoController.IEchoRepo, EchoController.EchoRepoTest>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

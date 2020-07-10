@@ -5,12 +5,13 @@ namespace Common
 {
     public interface IRestServerSender
     {
-        IEnumerator OnSendRestServer(string strIP_IncludePort, string strURI, byte[] arrSendByte, System.Action<ReturnCodeEnum, string> OnRecvJson);
+        IEnumerator OnSendRestServer(string strURI, byte[] arrSendByte, System.Action<ReturnCodeEnum, string> OnRecvJson);
     }
 
     public class RestServerSenderFactory : IEnumerable<IRestServerSender>
     {
         public static RestServerSender_Unity Unity => new RestServerSender_Unity();
+        public static RestServerSender_ForVSTest Test => new RestServerSender_ForVSTest();
 
         private readonly List<IRestServerSender> _listSender = new List<IRestServerSender>();
 

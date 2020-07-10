@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ClientSide\ASPClient.cs" />
     <Compile Include="ClientSide\IRestServerSender.cs" />
+    <Compile Include="ClientSide\RestServerSender_ForVSTest.cs" />
     <Compile Include="ClientSide\RestServerSender_Unity.cs" />
     <Compile Include="ClientSide\CommonPacketList.cs" />
     <Compile Include="Common\EnumClassExtension.cs" />

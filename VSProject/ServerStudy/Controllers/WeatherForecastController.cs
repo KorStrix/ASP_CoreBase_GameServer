@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace WebServerStudy.Controllers
+namespace ServerStudy.Controllers
 {
+    /// <summary>
+    /// ASP.net Core 솔루션 생성하면 나오는 예제 Controller
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
