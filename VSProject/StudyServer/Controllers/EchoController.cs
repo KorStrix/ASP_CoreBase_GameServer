@@ -9,7 +9,7 @@ using Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ServerStudy.Controllers
+namespace StudyServer.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]

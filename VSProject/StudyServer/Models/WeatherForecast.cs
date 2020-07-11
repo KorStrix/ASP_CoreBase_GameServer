@@ -1,6 +1,6 @@
 using System;
 
-namespace ServerStudy
+namespace StudyServer
 {
     /// <summary>
     /// ASP.net Core 솔루션 생성하면 나오는 예제 Model

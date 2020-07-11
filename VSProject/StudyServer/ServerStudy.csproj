@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>WebBase_GameServerStudy</AssemblyName>
-    <RootNamespace>ServerStudy</RootNamespace>
+    <AssemblyName>WebBase_GameStudyServer</AssemblyName>
+    <RootNamespace>StudyServer</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ServerStudy.Controllers
+namespace StudyServer.Controllers
 {
     /// <summary>
     /// ASP.net Core 솔루션 생성하면 나오는 예제 Controller

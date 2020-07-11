@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
-using ServerStudy.Controllers;
+using StudyServer.Controllers;
 using Xunit;
 
-namespace ServerStudyTests
+namespace StudyServerTests
 {
-    public class BasicTests : IClassFixture<WebApplicationFactory<ServerStudy.Startup>>
+    public class BasicTests : IClassFixture<WebApplicationFactory<StudyServer.Startup>>
     {
-        private readonly WebApplicationFactory<ServerStudy.Startup> _factory;
+        private readonly WebApplicationFactory<StudyServer.Startup> _factory;
 
-        public BasicTests(WebApplicationFactory<ServerStudy.Startup> factory)
+        public BasicTests(WebApplicationFactory<StudyServer.Startup> factory)
         {
             _factory = factory;
         }

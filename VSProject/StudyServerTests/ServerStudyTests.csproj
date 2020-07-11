@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>ServerStudyTests</AssemblyName>
+    <AssemblyName>StudyServerTests</AssemblyName>
 
-    <RootNamespace>ServerStudyTests</RootNamespace>
+    <RootNamespace>StudyServerTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ServerStudy\ServerStudy.csproj" />
+    <ProjectReference Include="..\StudyServer\ServerStudy.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,9 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
-using ServerStudy.Controllers;
+using StudyServer.Controllers;
 
-namespace ServerStudy
+namespace StudyServer
 {
     public class Startup
     {
